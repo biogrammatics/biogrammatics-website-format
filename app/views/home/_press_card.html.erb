@@ -1,0 +1,9 @@
+<%# locals: title:, link: %>
+<article class="rounded-2xl bg-slate-800 p-4">
+  <div class="aspect-[4/3] rounded-xl bg-slate-700 mb-4"></div>
+  <h3 class="text-lg font-semibold"><%= title %></h3>
+  <p class="text-slate-300 text-sm mt-2">
+    Add paragraph text. Update the font, size, and more. Use site styles for consistency.
+  </p>
+  <%= link_to "Read More", link, class: "inline-block mt-3 underline hover:text-brand-accent", target: "_blank", rel: "noopener" %>
+</article>

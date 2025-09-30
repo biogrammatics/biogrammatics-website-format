@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BioGrammatics</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+  <body class="font-sans text-brand-text bg-brand-bg">
+    <header class="sticky top-0 z-50 bg-brand-bg/85 backdrop-blur border-b border-brand-border">
+      <nav class="container max-w-7xl py-4 flex items-center justify-between">
+        <a href="/" class="text-lg font-semibold">BioGrammatics, Inc.</a>
+        <div class="hidden md:flex gap-6">
+          <%= link_to "Home", root_path, class: "hover:text-brand-accent" %>
+          <%= link_to "About", "#about", class: "hover:text-brand-accent" %>
+          <%= link_to "Services", "#services", class: "hover:text-brand-accent" %>
+          <%= link_to "Projects", "#projects", class: "hover:text-brand-accent" %>
+          <%= link_to "Contact", "#contact", class: "hover:text-brand-accent" %>
+        </div>
+        <%= link_to "Log In", "#", class: "hidden md:inline-block rounded-full bg-brand-accent px-4 py-2 text-brand-bg font-medium" %>
+      </nav>
+    </header>
+
+    <% if notice %>
+      <div class="container max-w-3xl mt-4">
+        <div class="rounded-md bg-emerald-900/40 border border-emerald-700 px-4 py-3 text-sm">
+          <%= notice %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= yield %>
+
+    <footer id="contact" class="mt-24 border-t border-brand-border">
+      <%= render "shared/footer" %>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+Use these classes for headings and text:
+- H1 (hero): class="font-display text-hero"
+- H2: class="font-display text-h2"
+- H3: class="font-display text-h3"
+- Body: class="text-body"
+- Small: class="text-small text-brand-muted"

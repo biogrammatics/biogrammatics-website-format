@@ -1,0 +1,35 @@
+<%= render "home/hero" %>
+
+<section id="about" class="mx-auto max-w-5xl px-4 py-20">
+  <h2 class="text-3xl md:text-4xl font-semibold mb-6">About</h2>
+  <p class="text-slate-300 leading-7">
+    This is the space to introduce visitors to the business or brand. Replace with your copy describing mission and value.
+  </p>
+  <%= link_to "Read More", about_path, class: "inline-block mt-6 underline hover:text-brand-accent" %>
+</section>
+
+<section id="services" class="mx-auto max-w-7xl px-4 py-20">
+  <h2 class="text-3xl md:text-4xl font-semibold mb-10">Services</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <% (1..4).each do |i| %>
+      <%= render "home/service_card", index: i, title: "Service Title", body: "Short description of the service…" %>
+    <% end %>
+  </div>
+</section>
+
+<section id="projects" class="mx-auto max-w-7xl px-4 py-20">
+  <h2 class="text-3xl md:text-4xl font-semibold mb-10">Featured Projects</h2>
+  <%= render "home/projects_grid" %>
+  <div class="mt-8">
+    <%= link_to "See All Projects", projects_path, class: "underline hover:text-brand-accent" %>
+  </div>
+</section>
+
+<section id="press" class="mx-auto max-w-7xl px-4 py-20">
+  <h2 class="text-3xl md:text-4xl font-semibold mb-10">Press</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <% 4.times do %>
+      <%= render "home/press_card", title: "Add a Title", link: "https://www.example.com" %>
+    <% end %>
+  </div>
+</section>
